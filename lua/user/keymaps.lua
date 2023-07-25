@@ -65,6 +65,10 @@ keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
 keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 
+-- Text Wrap --
+keymap("n", "<A-z>", ":set wrap!<CR>", opts)
+keymap("i", "<A-z>", "<C-o>:set wrap!<CR>", opts)
+
 
 -- Telescope --
 -- keymap("n", "<leader>f", "<cmd>Telescope find_files<cr>", opts)
