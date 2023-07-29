@@ -4,10 +4,12 @@ local servers = {
 	-- "html",
 	-- "tsserver",
 	-- "bashls",
+	"gopls",
 	"clangd",
 	"jedi_language_server",
 	"jsonls",
 	"rust_analyzer",
+	"jdtls",
 	-- "yamlls",
 }
 
