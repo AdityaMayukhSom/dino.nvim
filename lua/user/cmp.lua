@@ -102,7 +102,6 @@ cmp.setup({
 			-- vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
 			vim_item.menu = ({
 				nvim_lsp = "[LSP]",
-				coc = "[COC]",
 				luasnip = "[Snippet]",
 				buffer = "[Buffer]",
 				path = "[Path]",
@@ -112,7 +111,6 @@ cmp.setup({
 	},
 	sources = {
 		{ name = "nvim_lsp" },
-		{ name = "coc" },
 		{ name = "luasnip" },
 		{ name = "buffer" },
 		{ name = "path" },
@@ -130,9 +128,4 @@ cmp.setup({
 	view = {
 		entries = "native",
 	},
-})
-
--- Set configuration for specific filetype.
-cmp.setup.filetype("java", {
-	sources = cmp.config.sources({}),
 })

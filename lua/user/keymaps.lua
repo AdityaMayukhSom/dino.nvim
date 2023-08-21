@@ -85,3 +85,18 @@ keymap(
 )
 keymap("n", "<leader>tf", "<cmd>Telescope live_grep<cr>", opts)
 keymap("n", "<leader>tb", ":lua toggle_showtabline()<CR>", opts)
+
+-- code runner
+keymap("n", "<leader>r", ":RunCode<CR>", opts)
+keymap("n", "<leader>rf", ":RunFile<CR>", opts)
+keymap("n", "<leader>rft", ":RunFile tab<CR>", opts)
+keymap("n", "<leader>rp", ":RunProject<CR>", opts)
+keymap("n", "<leader>rc", ":RunClose<CR>", opts)
+keymap("n", "<leader>crf", ":CRFiletype<CR>", opts)
+keymap("n", "<leader>crp", ":CRProjects<CR>", opts)
+
+-- competitest runner
+keymap("n", "RT", ":CompetiTest run<CR>", opts)
+keymap("n", "DT", ":CompetiTest delete_testcase<CR>", opts)
+keymap("n", "ET", ":CompetiTest edit_testcase<CR>", opts)
+keymap("n", "AT", ":CompetiTest add_testcase<CR>", opts)

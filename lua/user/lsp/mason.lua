@@ -6,7 +6,7 @@ local servers = {
 	-- "bashls",
 	"tsserver",
 	"gopls",
-	"clangd",
+	-- "clangd",
 	"jedi_language_server",
 	"jsonls",
 	"rust_analyzer",

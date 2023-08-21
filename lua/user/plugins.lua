@@ -118,6 +118,17 @@ return packer.startup(function(use)
 	use("rust-lang/rust.vim")
 	use("simrat39/rust-tools.nvim")
 
+	-- for running projects (especially for cp)
+	use("CRAG666/code_runner.nvim")
+	-- test case runner for competitive programming
+	use({
+		"xeluxee/competitest.nvim",
+		requires = "MunifTanjim/nui.nvim",
+		config = function()
+			require("competitest").setup()
+		end,
+	})
+
 	-- to enable smooth scrolling
 	use("karb94/neoscroll.nvim")
 
