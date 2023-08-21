@@ -1,5 +1,4 @@
 local setup_ok, neoscroll = pcall(require, "neoscroll")
-
 if not setup_ok then
 	vim.notify("neoscroll not available")
 	return

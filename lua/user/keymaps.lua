@@ -5,6 +5,12 @@ local term_opts = { silent = true }
 -- Shorten function name
 local keymap = vim.api.nvim_set_keymap
 
+-- Define a function to toggle the value of 'showtabline'
+function toggle_showtabline()
+	local showtabline = vim.o.showtabline
+	vim.o.showtabline = showtabline == 0 and 2 or 0
+end
+
 --Remap space as leader key
 keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
@@ -77,4 +83,5 @@ keymap(
 	"<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_ivy({ previewer = true }))<cr>",
 	opts
 )
-keymap("n", "<c-t>", "<cmd>Telescope live_grep<cr>", opts)
+keymap("n", "<leader>tf", "<cmd>Telescope live_grep<cr>", opts)
+keymap("n", "<leader>tb", ":lua toggle_showtabline()<CR>", opts)

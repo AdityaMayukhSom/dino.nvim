@@ -47,7 +47,8 @@ return packer.startup(function(use)
 	use("moll/vim-bbye")
 
 	-- colorscheme plugins
-	use({ "nyoom-engineering/oxocarbon.nvim" }) -- oxocarbon colourscheme for neovim
+	use("nyoom-engineering/oxocarbon.nvim") -- oxocarbon colourscheme for neovim
+	use("navarasu/onedark.nvim") -- onedark colourscheme for neovim
 
 	-- cmp plugins
 	use("hrsh7th/nvim-cmp") -- The completion plugin
@@ -58,13 +59,24 @@ return packer.startup(function(use)
 	use("hrsh7th/cmp-nvim-lsp")
 	use("hrsh7th/cmp-nvim-lua")
 
+	-- status line configuration
+	use({
+		"nvim-lualine/lualine.nvim",
+		requires = { "nvim-tree/nvim-web-devicons", opt = true },
+	})
+
 	-- snippets
 	use("L3MON4D3/LuaSnip") -- snippet engine
 	use("rafamadriz/friendly-snippets") -- a bunch of snippets to use
 
 	-- plugins for nvim tree i.e. file explorer
 	use("kyazdani42/nvim-web-devicons")
-	use("kyazdani42/nvim-tree.lua")
+	use({
+		"nvim-tree/nvim-tree.lua",
+		requires = {
+			"nvim-tree/nvim-web-devicons", -- optional
+		},
+	})
 
 	-- Telescope
 	use("nvim-telescope/telescope.nvim")
@@ -75,6 +87,9 @@ return packer.startup(function(use)
 		"nvim-treesitter/nvim-treesitter",
 		run = ":TSUpdate",
 	})
+
+	-- Folding
+	use({ "kevinhwang91/nvim-ufo", requires = "kevinhwang91/promise-async" })
 
 	-- LSP
 	use("williamboman/mason.nvim") -- simple to use language server installer

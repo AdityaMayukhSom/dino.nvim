@@ -4,6 +4,7 @@ local servers = {
 	-- "html",
 	-- "tsserver",
 	-- "bashls",
+	"tsserver",
 	"gopls",
 	"clangd",
 	"jedi_language_server",

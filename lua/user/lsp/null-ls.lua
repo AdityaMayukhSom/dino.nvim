@@ -1,5 +1,6 @@
 local null_ls_status_ok, null_ls = pcall(require, "null-ls")
 if not null_ls_status_ok then
+	vim.notify("nulll-ls is not working")
 	return
 end
 
@@ -32,6 +33,13 @@ null_ls.setup({
 			extra_args = { "--fast" },
 		}),
 		-- formatting.yapf,
+		formatting.clang_format.with({
+			command = {
+				"clang-format",
+				"--style={BasedOnStyle: Google, ColumnLimit: 120, IncludeBlocks: Regroup, TabWidth: 4, IndentWidth: 4}",
+				"-",
+			},
+		}),
 		formatting.xmlformat,
 		formatting.goimports,
 		formatting.stylua,
