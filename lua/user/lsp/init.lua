@@ -5,12 +5,12 @@ if not status_ok then
 end
 
 require "user.lsp.mason"
+require "user.lsp.null-ls"
 
-local handlers = require("user.lsp.handlers")
+-- local handlers = require("user.lsp.handlers")
 -- if not handlers_status_ok then
 --     vim.notify("handlers.nvim not loaded properly")
 --     return
 -- end
-handlers.setup()
+-- handlers.setup()
 
-require "user.lsp.null-ls"

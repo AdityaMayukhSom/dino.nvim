@@ -1,6 +1,6 @@
 local null_ls_status_ok, null_ls = pcall(require, "null-ls")
 if not null_ls_status_ok then
-	vim.notify("nulll-ls is not working")
+	vim.notify("null-ls is not working")
 	return
 end
 
@@ -43,7 +43,7 @@ null_ls.setup({
 		formatting.xmlformat,
 		formatting.goimports,
 		formatting.stylua,
-		formatting.google_java_format,
+		-- formatting.google_java_format,
 		diagnostics.flake8,
 	},
 })
