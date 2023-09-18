@@ -26,8 +26,11 @@ sudo apt-get install -y xclip xdg-utils unzip
 ## Installation
 
 1. Install [Neovim](https://neovim.io/) if you haven't already.
+2. Install [Packer](https://github.com/wbthomason/packer.nvim) using the installation guide here.
 
-2. Clone the repository:
+  `(Installing Packer can be as simple as cloning the repository inside ~/.local directory as mentioned in Packer repository)`
+
+3. Clone the repository:
 
 ```bash
 git clone https://github.com/yourusername/dino.nvim.git ~/.config/nvim
