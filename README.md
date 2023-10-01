@@ -64,6 +64,13 @@ dino.nvim supports the following language servers:
 
 These language servers provide intelligent code completion, syntax checking, and other code analysis features to improve your coding workflow.
 
+## Formatting
+
+dino.nvim supports formatting using Mason formatters:
+
+- For Python formatting, install `black` formatter using `:MasonInstall black`.
+- For Markdown, JavaScript, HTML, CSS etc files, install `prettier` using `MasonInstall prettier`.
+
 ## Key Bindings
 
 *(Keymaps section is coming soon!)*
