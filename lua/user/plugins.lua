@@ -9,6 +9,24 @@ if fn.empty(fn.glob(install_path)) > 0 then
 	vim.cmd([[packadd packer.nvim]])
 end
 
+-- Function to install ripgrep using apt if it's not installed
+local function install_ripgrep()
+	-- Check if ripgrep is already installed
+	if vim.fn.executable("rg") == 1 then
+		-- ripgrep or similar type of utility is already installed, hence no need to install it again
+		-- print("'ripgrep' is already installed, can use telescope's live grep facility.")
+		return true
+	else
+		-- Install ripgrep using apt-get
+		print("'ripgrep' is not installed, please install 'ripgrep' to use telescope's live_grep facility.")
+		-- to install ripgrep using lia itself, use os.execute utility
+		local install_command = "silent !sudo apt-get install ripgrep"
+		print("try : " .. install_command)
+		-- os.execute(install_command)
+		return false
+	end
+end
+
 -- Autocommand that reloads neovim whenever you save the plugins.lua file
 vim.cmd([[
   augroup packer_user_config
@@ -38,7 +56,7 @@ packer.init({
 return packer.startup(function(use)
 	-- My plugins here
 	use("wbthomason/packer.nvim") -- Have packer manage itself
-	use("nvim-lua/popup.nvim") -- An implementation of the Popup API from vim in Neovim
+	use("nvim-lua/popup.nvim")  -- An implementation of the Popup API from vim in Neovim
 	use("nvim-lua/plenary.nvim") -- Useful lua functions used ny lots of plugins
 	use("akinsho/toggleterm.nvim") -- useful terminal inside neovim
 
@@ -48,13 +66,15 @@ return packer.startup(function(use)
 
 	-- colorscheme plugins
 	use("nyoom-engineering/oxocarbon.nvim") -- oxocarbon colourscheme for neovim
-	use("navarasu/onedark.nvim") -- onedark colourscheme for neovim
+	use("navarasu/onedark.nvim")         -- onedark colourscheme for neovim
+
+
 
 	-- cmp plugins
-	use("hrsh7th/nvim-cmp") -- The completion plugin
-	use("hrsh7th/cmp-buffer") -- buffer completions
-	use("hrsh7th/cmp-path") -- path completions
-	use("hrsh7th/cmp-cmdline") -- cmdline completions
+	use("hrsh7th/nvim-cmp")      -- The completion plugin
+	use("hrsh7th/cmp-buffer")    -- buffer completions
+	use("hrsh7th/cmp-path")      -- path completions
+	use("hrsh7th/cmp-cmdline")   -- cmdline completions
 	use("saadparwaiz1/cmp_luasnip") -- snippet completions
 	use("hrsh7th/cmp-nvim-lsp")
 	use("hrsh7th/cmp-nvim-lua")
@@ -66,7 +86,7 @@ return packer.startup(function(use)
 	})
 
 	-- snippets
-	use("L3MON4D3/LuaSnip") -- snippet engine
+	use("L3MON4D3/LuaSnip")          -- snippet engine
 	use("rafamadriz/friendly-snippets") -- a bunch of snippets to use
 
 	-- plugins for nvim tree i.e. file explorer
@@ -78,9 +98,12 @@ return packer.startup(function(use)
 		},
 	})
 
-	use({ "neoclide/coc.nvim", branch = "release" })
+	-- used in contrast to nvim LSP for maintaining language servers
+	-- use({ "neoclide/coc.nvim", branch = "release" })
 
 	-- Telescope
+	-- Call the install_ripgrep function to check and install ripgrep
+	install_ripgrep()
 	use("nvim-telescope/telescope.nvim")
 	use("nvim-telescope/telescope-media-files.nvim")
 
@@ -94,9 +117,9 @@ return packer.startup(function(use)
 	use({ "kevinhwang91/nvim-ufo", requires = "kevinhwang91/promise-async" })
 
 	-- LSP
-	use("williamboman/mason.nvim") -- simple to use language server installer
+	use("williamboman/mason.nvim")      -- simple to use language server installer
 	use("williamboman/mason-lspconfig.nvim")
-	use("neovim/nvim-lspconfig") -- enable LSP
+	use("neovim/nvim-lspconfig")        -- enable LSP
 	use("jose-elias-alvarez/null-ls.nvim") -- for formatters and linters
 	use("RRethy/vim-illuminate")
 
