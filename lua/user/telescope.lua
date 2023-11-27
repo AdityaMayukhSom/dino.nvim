@@ -1,5 +1,6 @@
 local status_ok, telescope = pcall(require, "telescope")
 if not status_ok then
+	print("could not successfully load 'telescope'")
 	return
 end
 
@@ -14,10 +15,29 @@ telescope.setup({
 		prompt_prefix = " ",
 		selection_caret = " ",
 		path_display = { "smart" },
+		selection_strategy = "reset",
+		sorting_strategy = "ascending",
+		layout_strategy = "horizontal",
 		layout_config = {
-			horizontal = { width = 0.5 },
-			-- other layout configuration here
+			horizontal = {
+				prompt_position = "top",
+				preview_width = 0.55,
+				results_width = 0.8,
+			},
+			vertical = {
+				mirror = false,
+			},
+			width = 0.87,
+			height = 0.80,
+			preview_cutoff = 120,
 		},
+		file_sorter = require("telescope.sorters").get_fuzzy_file,
+		file_ignore_patterns = { "node_modules" },
+		generic_sorter = require("telescope.sorters").get_generic_fuzzy_sorter,
+
+		file_previewer = require("telescope.previewers").vim_buffer_cat.new,
+		grep_previewer = require("telescope.previewers").vim_buffer_vimgrep.new,
+		qflist_previewer = require("telescope.previewers").vim_buffer_qflist.new,
 
 		mappings = {
 			i = {
