@@ -28,7 +28,7 @@ sudo apt-get install -y xclip xdg-utils unzip
 1. Install [Neovim](https://neovim.io/) if you haven't already.
 2. Install [Packer](https://github.com/wbthomason/packer.nvim) using the installation guide here.
 
-  `(Installing Packer can be as simple as cloning the repository inside ~/.local directory as mentioned in Packer repository)`
+`(Installing Packer can be as simple as cloning the repository inside ~/.local directory as mentioned in Packer repository)`
 
 3. Clone the repository:
 
@@ -69,12 +69,16 @@ These language servers provide intelligent code completion, syntax checking, and
 dino.nvim supports formatting using Mason formatters:
 
 - For Python formatting, install `black` formatter using `:MasonInstall black`.
-- For Markdown, JavaScript, HTML, CSS etc files, install `prettier` using `MasonInstall prettier`.
+- For Markdown, JavaScript, HTML, CSS etc files, install `prettier` using `:MasonInstall prettier`.
 
 ## Key Bindings
 
-*(Keymaps section is coming soon!)*
+_(Keymaps section is coming soon!)_
 
 ## License
 
 dino.nvim is licensed under the GNU General Public License Version 3.0 (GPL-3.0). For details, please see the [LICENSE](./LICENSE) file.
+
+## Ongoing
+
+- A script to automate the installation process.
