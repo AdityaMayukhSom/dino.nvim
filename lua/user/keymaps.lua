@@ -6,6 +6,7 @@ local term_opts = { silent = true }
 local keymap = vim.api.nvim_set_keymap
 
 -- Define a function to toggle the value of 'showtabline'
+-- used to toggle if the top navigation bar should be visible or not
 function toggle_showtabline()
 	local showtabline = vim.o.showtabline
 	vim.o.showtabline = showtabline == 0 and 2 or 0
@@ -84,6 +85,8 @@ keymap(
 	opts
 )
 keymap("n", "<leader>tf", "<cmd>Telescope live_grep<cr>", opts)
+
+-- toggling buffer tabs
 keymap("n", "<leader>tb", ":lua toggle_showtabline()<CR>", opts)
 
 -- code runner
