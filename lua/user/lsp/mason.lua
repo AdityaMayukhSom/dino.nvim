@@ -1,15 +1,15 @@
 local servers = {
     "lua_ls",
+    "tsserver",
+    "gopls",
+    "jedi_language_server",
+    "jsonls",
     -- "cssls",
     -- "html",
     -- "tsserver",
     -- "bashls",
-    "tsserver",
-    -- "gopls",
     -- "clangd",
-    "jedi_language_server",
-    "jsonls",
-    "rust_analyzer",
+    -- "rust_analyzer",
     -- "yamlls",
 }
 
