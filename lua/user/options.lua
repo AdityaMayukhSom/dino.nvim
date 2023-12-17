@@ -26,14 +26,14 @@ local options = {
 	tabstop = 4, -- insert number of spaces for a tab
 	cursorline = true, -- highlight the current line
 	number = true, -- set numbered lines
-	relativenumber = false, -- set relative numbered lines
-	numberwidth = 4, -- set number column width to 2 {default 4}
+	relativenumber = true, -- set relative numbered lines
+	numberwidth = 4, -- set number column width {default 4}
 	wrap = false, -- display lines as one long line
 	-- cmdheight = 2,                     -- more space in the neovim command line for displaying messages
-	-- signcolumn = "yes", -- always show the sign column, otherwise it would shift the text each time
-	scrolloff = 8, -- is one of my fav
-	sidescrolloff = 8,
-	guifont = "monospace:h17", -- the font used in graphical neovim applications
+	signcolumn = "yes", -- always show the sign column, otherwise it would shift the text each time
+	scrolloff = 10, -- is one of my fav
+	sidescrolloff = 10,
+	-- guifont = "monospace:h17", -- the font used in graphical neovim applications
 	encoding = "utf-8",
 	showtabline = 0, -- never show tabline by default
 	cmdheight = 0,
@@ -47,8 +47,8 @@ for k, v in pairs(options) do
 end
 
 -- enabling rust formatter
-vim.g.rustfmt_autosave = 1
-
+-- vim.g.rustfmt_autosave = 1
+vim.cmd("set nohlsearch")
 vim.cmd("set whichwrap+=<,>,[,],h,l")
 vim.cmd([[set iskeyword+=-]])
 vim.cmd([[set formatoptions-=cro]]) -- TODO: this doesn't seem to work
