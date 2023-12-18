@@ -1,4 +1,4 @@
-local colorscheme = "oxocarbon" -- put the name of the desired colorscheme here
+local colorscheme = "ayu" -- put the name of the desired colorscheme here
 
 vim.opt.background = "dark" -- set this to dark or light, as oxocarbon is dark we set it as dark
 
