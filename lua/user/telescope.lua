@@ -12,8 +12,8 @@ local actions = require("telescope.actions")
 telescope.setup({
 	defaults = {
 
-		prompt_prefix = " ",
-		selection_caret = " ",
+		prompt_prefix = "$ ",
+		selection_caret = ">> ",
 		path_display = { "smart" },
 		selection_strategy = "reset",
 		sorting_strategy = "ascending",
@@ -32,7 +32,7 @@ telescope.setup({
 			preview_cutoff = 120,
 		},
 		file_sorter = require("telescope.sorters").get_fuzzy_file,
-		file_ignore_patterns = { "node_modules" },
+		file_ignore_patterns = { "node_modules", ".m2", "venv" },
 		generic_sorter = require("telescope.sorters").get_generic_fuzzy_sorter,
 
 		file_previewer = require("telescope.previewers").vim_buffer_cat.new,
@@ -104,15 +104,18 @@ telescope.setup({
 			},
 		},
 	},
-	-- pickers = {
-	-- Default configuration for builtin pickers goes here:
-	-- picker_name = {
-	--   picker_config_key = value,
-	--   ...
-	-- }
-	-- Now the picker_config_key will be applied every time you call this
-	-- builtin picker
-	-- },
+	pickers = {
+		-- Default configuration for builtin pickers goes here:
+		-- picker_name = {
+		--   picker_config_key = value,
+		--   ...
+		-- }
+		find_files = {
+			disable_devicons = true,
+		},
+		-- Now the picker_config_key will be applied every time you call this
+		-- builtin picker
+	},
 	extensions = {
 		media_files = {
 			-- filetypes whitelist
