@@ -14,19 +14,19 @@ M.setup = function()
 	local signs = {
 		{
 			name = "DiagnosticSignError",
-			text = "",
+			text = "E",
 		},
 		{
 			name = "DiagnosticSignWarn",
-			text = "",
+			text = "W",
 		},
 		{
 			name = "DiagnosticSignHint",
-			text = "",
+			text = "H",
 		},
 		{
 			name = "DiagnosticSignInfo",
-			text = "",
+			text = "I",
 		},
 	}
 
