@@ -32,7 +32,9 @@ keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 
-keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
+keymap("n", "<A-e>", ":NvimTreeToggle<CR>", opts)
+keymap("n", "n", ":undo<CR>", opts)
+keymap("n", "r", ":redo<CR>", opts)
 
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize +2<CR>", opts)
@@ -80,29 +82,37 @@ keymap("n", "<A-z>", ":set wrap!<CR>", opts)
 keymap("i", "<A-z>", "<C-o>:set wrap!<CR>", opts)
 
 -- Telescope --
--- keymap("n", "<leader>f", "<cmd>Telescope find_files<cr>", opts)
+keymap("n", "tf", "<cmd>Telescope find_files<cr>", opts)
 keymap(
 	"n",
-	"<leader>f",
+	"ts",
 	"<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_ivy({ previewer = true }))<cr>",
 	opts
 )
-keymap("n", "<leader>tf", "<cmd>Telescope live_grep<cr>", opts)
+
+-- opens fuzzy finder
+keymap("n", "tg", "<cmd>Telescope live_grep<cr>", opts)
 
 -- toggling buffer tabs
 keymap("n", "<leader>tb", ":lua toggle_showtabline()<CR>", opts)
 
+-- git signs toggle
+keymap("n", "gst", ":Gitsigns toggle_signs<CR>", opts)
+
+-- shortcut to focus nvim tree
+keymap("n", "ft", ":NvimTreeFocus<CR>", opts)
+
 -- code runner
-keymap("n", "<leader>r", ":RunCode<CR>", opts)
-keymap("n", "<leader>rf", ":RunFile<CR>", opts)
-keymap("n", "<leader>rft", ":RunFile tab<CR>", opts)
-keymap("n", "<leader>rp", ":RunProject<CR>", opts)
-keymap("n", "<leader>rc", ":RunClose<CR>", opts)
-keymap("n", "<leader>crf", ":CRFiletype<CR>", opts)
-keymap("n", "<leader>crp", ":CRProjects<CR>", opts)
+-- keymap("n", "<leader>r", ":RunCode<CR>", opts)
+-- keymap("n", "<leader>rf", ":RunFile<CR>", opts)
+-- keymap("n", "<leader>rft", ":RunFile tab<CR>", opts)
+-- keymap("n", "<leader>rp", ":RunProject<CR>", opts)
+-- keymap("n", "<leader>rc", ":RunClose<CR>", opts)
+-- keymap("n", "<leader>crf", ":CRFiletype<CR>", opts)
+-- keymap("n", "<leader>crp", ":CRProjects<CR>", opts)
 
 -- competitest runner
-keymap("n", "RT", ":CompetiTest run<CR>", opts)
-keymap("n", "DT", ":CompetiTest delete_testcase<CR>", opts)
-keymap("n", "ET", ":CompetiTest edit_testcase<CR>", opts)
-keymap("n", "AT", ":CompetiTest add_testcase<CR>", opts)
+-- keymap("n", "RT", ":CompetiTest run<CR>", opts)
+-- keymap("n", "DT", ":CompetiTest delete_testcase<CR>", opts)
+-- keymap("n", "ET", ":CompetiTest edit_testcase<CR>", opts)
+-- keymap("n", "AT", ":CompetiTest add_testcase<CR>", opts)
