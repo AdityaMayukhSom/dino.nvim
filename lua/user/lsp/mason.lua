@@ -5,6 +5,7 @@ local servers = {
     "html",
     "bashls",
     "clangd",
+    "angularls",
     -- "jdtls",
     -- "gopls",
     -- "jedi_language_server",
