@@ -27,10 +27,10 @@ vim.g.maplocalleader = " "
 
 -- Normal --
 -- Better window navigation
-keymap("n", "<C-h>", "<C-w>h", opts)
-keymap("n", "<C-j>", "<C-w>j", opts)
-keymap("n", "<C-k>", "<C-w>k", opts)
-keymap("n", "<C-l>", "<C-w>l", opts)
+keymap("n", "<A-h>", "<C-w>h", opts)
+keymap("n", "<A-j>", "<C-w>j", opts)
+keymap("n", "<A-k>", "<C-w>k", opts)
+keymap("n", "<A-l>", "<C-w>l", opts)
 
 keymap("n", "<A-e>", ":NvimTreeToggle<CR>", opts)
 keymap("n", "n", ":undo<CR>", opts)
@@ -72,10 +72,10 @@ keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 
 -- Terminal --
 -- Better terminal navigation
-keymap("t", "<C-h>", "<C-\\><C-N><C-w>h", term_opts)
-keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
-keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
-keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
+keymap("t", "<A-h>", "<C-\\><C-N><C-w>h", term_opts)
+keymap("t", "<A-j>", "<C-\\><C-N><C-w>j", term_opts)
+keymap("t", "<A-k>", "<C-\\><C-N><C-w>k", term_opts)
+keymap("t", "<A-l>", "<C-\\><C-N><C-w>l", term_opts)
 
 -- Text Wrap --
 keymap("n", "<A-z>", ":set wrap!<CR>", opts)
@@ -100,7 +100,7 @@ keymap("n", "<leader>tb", ":lua toggle_showtabline()<CR>", opts)
 keymap("n", "gst", ":Gitsigns toggle_signs<CR>", opts)
 
 -- shortcut to focus nvim tree
-keymap("n", "ft", ":NvimTreeFocus<CR>", opts)
+keymap("n", "<A-t>", ":NvimTreeFocus<CR>", opts)
 
 -- code runner
 -- keymap("n", "<leader>r", ":RunCode<CR>", opts)
