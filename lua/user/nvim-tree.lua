@@ -150,7 +150,7 @@ nvim_tree.setup({
 		relativenumber = false,
 		signcolumn = "yes",
 		float = {
-			enable = true,
+			enable = false,
 			quit_on_focus_loss = false,
 			open_win_config = {
 				relative = "editor",
