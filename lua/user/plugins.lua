@@ -94,6 +94,8 @@ return packer.startup(function(use)
 			opt = true,
 		},
 	})
+	-- auto close and rename tags
+	use("windwp/nvim-ts-autotag")
 
 	-- snippets
 	use("L3MON4D3/LuaSnip") -- snippet engine
