@@ -7,6 +7,7 @@ end
 
 configs.setup({
 	ensure_installed = {
+		"angular",
 		"c",
 		"lua",
 		"cpp",
@@ -18,6 +19,7 @@ configs.setup({
 		"html",
 		"typescript",
 		"css",
+		"xml",
 	},
 	sync_install = false,
 	ignore_install = { "" }, -- List of parsers to ignore installing
@@ -30,5 +32,14 @@ configs.setup({
 	context_commentstring = {
 		enable = true,
 		enable_autocmd = false,
+	},
+	-- used for automatically opening and closing tags
+	-- requires use("windwp/nvim-ts-autotag") as plugin
+	-- REFER :: https://github.com/windwp/nvim-ts-autotag
+	autotag = {
+		enable = true,
+		enable_rename = true,
+		enable_close = true,
+		enable_close_on_slash = true,
 	},
 })
