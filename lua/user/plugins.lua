@@ -75,7 +75,8 @@ return packer.startup(function(use)
 	use("nyoom-engineering/oxocarbon.nvim") -- oxocarbon colourscheme for neovim
 	-- use("navarasu/onedark.nvim")         -- onedark colourscheme for neovim
 	-- use("ayu-theme/ayu-dark")
-	use("Shatur/neovim-ayu")
+	-- use("Shatur/neovim-ayu")
+	use("Mofiqul/vscode.nvim")
 
 	-- cmp plugins
 	use("hrsh7th/nvim-cmp") -- The completion plugin
